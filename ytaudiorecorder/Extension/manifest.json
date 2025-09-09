@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Yt audio recorder",
+    "version": "1.0.0",
+    "description": "Next Future",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "activeTab",
+        "tabCapture"
+    ]
+}
