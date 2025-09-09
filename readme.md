@@ -19,7 +19,7 @@ Follow these steps to run it locally:
 
 ```bash
 git clone https://github.com/SuperexMack/yt-audio-extension.git
-cd ytaudiorecorder/extension.
+cd ytaudiorecorder/Extension.
 ```
 
 2. Now go to ur chrome browser and go to the extension option and 
