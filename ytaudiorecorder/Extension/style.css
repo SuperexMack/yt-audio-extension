@@ -1,35 +1,106 @@
 
+body{
+    background-color: #122030;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+}
+.neon-icon {
+  filter: drop-shadow(0 0 2px #00f7ff);
+  transition: filter 0.3s ease-in-out;
+}
 
+.neon-icon:hover {
+  filter: drop-shadow(0 0 4px #00f7ff);
+}
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem; /* Equivalent to Tailwind's w-16 */
+    height: 4rem; /* Equivalent to Tailwind's h-16 */
+    background-image: linear-gradient(to right, #22d3ee, #a855f7); 
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 0 rgba(34, 211, 238, 0.3); /* Equivalent to Tailwind's shadow-lg shadow-cyan-400/30 */
+}
 .main-box{
     display:flex;
     flex-direction:column;
     justify-content: center;
+    align-items: center;
     width: 400px;
     height: auto;
     padding: 10px;
-    background-color: rgb(243, 239, 239);
-    border: 4px solid black;
-    border-radius: 15px;
+    background-color: #122030;
 }
 
 .main-head{
-    margin-top: 30px;
+    margin-top: 6px;
     text-align: center;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+}
+.secondary-head{
+    margin-top: 0px;
+    text-align: center;
+    color: #67e8f9;
+    font-size: 0.875rem;
+    font-family: monospace;
+    font-weight: 200;
+}
+.controls-section {
+    margin-top: 30px;
+    padding: 0 2rem 1.5rem 2rem; /* Equivalent to Tailwind's px-8 pb-6 */
+    position: relative;
 }
 
 .mybtn{
-    gap:30px;
-    display:flex;
-    justify-content: center;
-    gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem; 
+    font-weight: 700;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to Tailwind's shadow-lg */
+    transition: all 0.2s ease-in-out; /* Equivalent to Tailwind's transition-all duration-200 */
+    transform: scale(1);
+    border: 1px solid;
+    cursor: pointer;
 }
 
 .startRecord{
-    padding: 10px;
+    background-image: linear-gradient(to right, #ef4444, #dc2626);
+    color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 0 rgba(239, 68, 68, 0.3); 
+    border-color: rgba(248, 113, 113, 0.5);
 }
 
-.stoptRecord{
-    padding: 10px;
+.startRecord:hover {
+    background-image: linear-gradient(to right, #bd1b1b, #bd1b1b);
+    transform: scale(1.05);
+   transition: all 400ms ease-in-out;
+}
+
+.startRecord:active {
+    transform: scale(0.95); /*Will give clicking effect*/
+}
+
+.stopRecord {
+    display: none;
+    background-image: linear-gradient(to right, #374151, #1f2937);
+    align-items: center;
+    color: #fff; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 0 rgba(107, 114, 128, 0.3); 
+    border-color: rgba(107, 114, 128, 0.5);
+}
+
+.stopRecord:hover {
+    background-image: linear-gradient(to right, #4b5563, #374151); /* Equivalent to Tailwind's hover:from-gray-600 hover:to-gray-700 */
+    transform: scale(1.05); /* Equivalent to Tailwind's hover:scale-105 */
+}
+
+.stopRecord:active {
+    transform: scale(0.95); /* Equivalent to Tailwind's active:scale-95 */
 }
 
 #content-area{
@@ -74,4 +145,84 @@
 
 #send-btn:hover{
     background-color: palevioletred;
+}
+.hidden{
+    display: none;
+}
+.recording-status {
+    text-align: center;
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; 
+    background-color: rgba(127, 29, 29, 0.5);
+    color: #fca5a5;
+    padding: 0.5rem 1rem; 
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-dot {
+    width: 0.5rem;
+    height: 0.5rem; 
+    background-color: #f87171; 
+    border-radius: 9999px;
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.5); 
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+.result-area {
+    background-color: rgba(31, 41, 55, 0.5); 
+    border-radius: 0.75rem; 
+    padding: 1.5rem; 
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 0 rgba(34, 211, 238, 0.1); /* Equivalent to Tailwind's shadow-lg shadow-cyan-400/10 */
+}
+.userPermission{
+    text-align: center;
+    color: #67e8f9;
+}
+
+.download-btn {
+    width: 100%;
+    margin-top: 20px;
+    background-image: linear-gradient(to right, #10b981, #059669);
+    color: #000; 
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 700; 
+    box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+        0 4px 6px -2px rgba(0, 0, 0, 0.05), 
+        0 0 8px 2px rgba(16, 185, 129, 0.35); /* subtle glow */
+    transition: all 0.2s ease-in-out; 
+    transform: scale(1); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; 
+    border: 1px solid rgba(52, 211, 153, 0.5); 
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-image: linear-gradient(to right, #34d399, #6ee7b7); 
+    transform: scale(1.05); 
+    box-shadow: 
+        0 0 12px 4px rgba(16, 185, 129, 0.45); /* stronger glow on hover */
+}
+
+.download-btn:active {
+    transform: scale(0.95);
+    box-shadow: 
+        0 0 6px 2px rgba(16, 185, 129, 0.35); /* shrink glow slightly */
 }
